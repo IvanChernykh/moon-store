@@ -1,9 +1,14 @@
-import NavBar from "./NavBar/NavBar";
+import { Route } from "react-router";
+import Header from "./Header/Header";
+import HomePage from "./HomePage/HomePage";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
+    <div className="app"  >
+      <Header />
+      <Route exact path='/'>
+        <HomePage />
+      </Route>
     </div>
   );
 }
