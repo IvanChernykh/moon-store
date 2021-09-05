@@ -1,6 +1,7 @@
 const SHOP_DATA = {
     mens: {
         title: "Men's",
+        linkUrl: '/shop/mens',
         imageUrl: 'https://i.pinimg.com/564x/56/53/77/56537710ec884b1d3dbe9408bf52cc0c.jpg',
         items: [
             {
@@ -43,6 +44,7 @@ const SHOP_DATA = {
     },
     womens: {
         title: "Women's",
+        linkUrl: '/shop/womens',
         imageUrl: 'https://i.pinimg.com/564x/1e/64/bb/1e64bb1f1b3098389907da6e2a73a9b9.jpg',
         items: [
             {
@@ -93,10 +95,17 @@ const SHOP_DATA = {
                 price: 24,
                 imageUrl: 'https://i.pinimg.com/564x/70/9b/d1/709bd17daa48b1d97d0091fb9bfe81bb.jpg'
             },
+            {
+                id: 9,
+                name: 'Powered by plants T-shirt',
+                price: 27,
+                imageUrl: 'https://i.ibb.co/GHPP9fC/powered-by-plants-t-shirt.jpg'
+            },
         ]
     },
     Jeans: {
         title: "Jeans",
+        linkUrl: '/shop/jeans',
         imageUrl: 'https://i.pinimg.com/564x/77/72/9a/77729aed3abaf478dfbfa962dbf5e45c.jpg',
         items: [
             {
@@ -121,6 +130,7 @@ const SHOP_DATA = {
     },
     Hats: {
         title: "Hats",
+        linkUrl: '/shop/hats',
         imageUrl: 'https://i.ibb.co/S7Mm4bq/blue-jeans-cap.jpg',
         items: [
             {
@@ -157,6 +167,7 @@ const SHOP_DATA = {
     },
     tShirts: {
         title: "T-shirts",
+        linkUrl: '/shop/tshirts',
         imageUrl: 'https://i.ibb.co/MkK7G18/red-t-shirt.jpg',
         items: [
             {
