@@ -1,11 +1,13 @@
+import { connect } from 'react-redux'
+import { addItem } from '../../../redux/reducers/checkoutReducer'
 import cls from './CardItem.module.scss'
 
-function CardItem({ item }) {
+function CardItem({ item, addItem }) {
     return (
         <div className={cls.card}>
             <div className={cls.image}>
                 <div className={cls.imageHover}>
-                    <button>Add To Cart</button>
+                    <button onClick={() => addItem(item)}>Add To Cart</button>
                 </div>
                 <img src={item.imageUrl} alt={item.name} />
             </div>
@@ -17,4 +19,4 @@ function CardItem({ item }) {
     )
 }
 
-export default CardItem
+export default connect(null, { addItem })(CardItem)

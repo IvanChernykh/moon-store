@@ -47,3 +47,35 @@
     text-transform: uppercase;
   }
 }
+@media (max-width: 992px) {
+  .collection {
+    height: 260px;
+    &.primary {
+      min-width: 40%;
+      height: 300px;
+    }
+    div {
+      position: absolute;
+    }
+    &:hover .background {
+      transform: scale(1.1);
+    }
+  }
+}
+@media (max-width: 768px) {
+  .collection {
+    min-width: 40%;
+    &.primary {
+      height: 260px;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .collection {
+    min-width: 100%;
+    margin-bottom: 10px;
+    &.primary {
+      min-width: 100%;
+    }
+  }
+}

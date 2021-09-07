@@ -1,0 +1,44 @@
+.container {
+  position: absolute;
+  right: 0;
+  top: 120%;
+  width: 250px;
+  border: 2px solid #222;
+  padding: 15px;
+  background-color: #fff;
+  z-index: 1;
+}
+.items {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  height: 250px;
+  overflow-y: scroll;
+}
+.button {
+  width: 100%;
+  outline: none;
+  border: 2px solid #222;
+  background-color: #222;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  a {
+    color: #fff;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  &:hover {
+    background-color: #fff;
+    a {
+      color: #222;
+    }
+  }
+}
+.empty {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}

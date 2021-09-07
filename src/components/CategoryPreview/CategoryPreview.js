@@ -5,6 +5,7 @@ import cls from './CategoryPreview.module.scss'
 
 function CategoryPreview({ category }) {
     const Items = category.items.map(item => {
+        if (category.items.indexOf(item) >= 4) return null
         return <CardItem key={item.id} item={item} />
     })
     return (

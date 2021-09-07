@@ -9,10 +9,53 @@
   font-size: 1.15rem;
   text-decoration: none;
   border-bottom: 3px solid transparent;
-  transition: border 0.25s;
+  transition: border 0.2s;
   padding: 2px;
+  margin-right: 15px;
   &:hover,
   &.active {
     border-color: #444;
+  }
+}
+.logo img {
+  height: 50px;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.checkout {
+  position: relative;
+  margin-left: 15px;
+  padding-bottom: 3px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  .items {
+    position: absolute;
+    left: 50%;
+    top: 54%;
+    transform: translate(-50%, -50%);
+  }
+  .icon {
+    height: 34px;
+    width: auto;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    height: 70px;
+  }
+  .link {
+    margin-right: 12px;
+  }
+  .checkout {
+    .icon {
+      height: 30px;
+    }
+  }
+  .logo img {
+    height: 40px;
   }
 }
