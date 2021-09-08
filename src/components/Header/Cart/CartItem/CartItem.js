@@ -8,7 +8,7 @@ function CartItem({ item }) {
             </div>
             <div className={cls.text}>
                 <span>{item.name}</span>
-                <span>{item.quantity} x {item.price}$</span>
+                <span>{item.quantity} &times; {item.price}$</span>
             </div>
         </div>
     )
