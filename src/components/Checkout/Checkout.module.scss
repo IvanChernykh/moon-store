@@ -33,4 +33,16 @@
   gap: 15px;
   max-height: 500px;
   overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 1em;
+    background-color: #fafafa;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #ebebeb;
+  }
+}
+.totalPrice {
+  padding: 15px 0;
+  text-transform: uppercase;
+  text-align: right;
 }

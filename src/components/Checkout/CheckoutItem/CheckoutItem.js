@@ -15,7 +15,7 @@ function CheckoutItem({ item, removeItem, addItem, decreaseQuantity }) {
                     <span>{item.quantity}</span>
                     <div onClick={() => addItem(item)}> + </div>
                 </div>
-                <div className={`${cls.col} ${cls.price}`}>{item.price}</div>
+                <div className={`${cls.col} ${cls.price}`}>${item.price}</div>
                 <div className={cls.col}>
                     <button className={cls.remove} onClick={() => removeItem(item)}>&times;</button>
                 </div>

@@ -13,7 +13,7 @@ function CardItem({ item, addItem }) {
             </div>
             <div className={cls.text}>
                 <h4 >{item.name}</h4>
-                <span>{item.price}$</span>
+                <span>${item.price}</span>
             </div>
         </div>
     )

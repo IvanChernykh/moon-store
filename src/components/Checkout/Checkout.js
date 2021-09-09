@@ -16,6 +16,7 @@ function Checkout({ checkout, removeItem, addItem, decreaseQuantity }) {
                 <span>Remove</span>
             </div>
             {Items.length ? <div className={cls.items}> {Items}</div> : null}
+            <h2 className={cls.totalPrice}>Total:</h2>
         </div>
     )
 }
