@@ -1,4 +1,4 @@
-import { getItemQuantityArr, getStateWithRemovedItem } from "./utils/checkoutUtils"
+import { calculateTotalPrice, getItemQuantityArr, getStateWithRemovedItem } from "./utils/checkoutUtils"
 
 const TOGGLE_CART = 'TOGGLE_CART'
 const ADD_ITEM = 'ADD_ITEM'
@@ -8,7 +8,9 @@ const DECREASE_QUANTITY = 'DECREASE_QUANTITY'
 const initialState = {
     showCart: false,
     totalItems: 0,
-    items: []
+    totalPrice: 0,
+    items: [],
+
 }
 
 function checkoutReducer(state = initialState, action) {
@@ -23,16 +25,24 @@ function checkoutReducer(state = initialState, action) {
                 action.item.quantity = 1
                 return [...state.items, action.item]
             }
+            const increasedItems = returnItems()
             return {
                 ...state,
                 totalItems: ++state.totalItems,
-                items: returnItems()
+                totalPrice: calculateTotalPrice(increasedItems),
+                items: increasedItems
             }
         case REMOVE_ITEM:
             return getStateWithRemovedItem(state, action)
         case DECREASE_QUANTITY:
             if (action.item.quantity <= 1) return getStateWithRemovedItem(state, action)
-            return { ...state, totalItems: state.totalItems - 1, items: getItemQuantityArr(false, state, action) }
+            const decreasedItems = getItemQuantityArr(false, state, action)
+            return {
+                ...state,
+                totalItems: state.totalItems - 1,
+                decreasedItems,
+                totalPrice: calculateTotalPrice(decreasedItems)
+            }
         default:
             return { ...state }
     }

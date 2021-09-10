@@ -1,8 +1,10 @@
 export function getStateWithRemovedItem(state, action) {
+    const items = state.items.filter(item => item.id !== action.item.id)
     return {
         ...state,
         totalItems: state.totalItems - action.item.quantity,
-        items: state.items.filter(item => item.id !== action.item.id)
+        items,
+        totalPrice: calculateTotalPrice(items)
     }
 }
 export function getItemQuantityArr(increase, state, action) {
@@ -13,4 +15,9 @@ export function getItemQuantityArr(increase, state, action) {
         }
         return item
     })
+}
+export function calculateTotalPrice(items) {
+    let totalPrice = 0
+    items.forEach(item => totalPrice += item.price * item.quantity)
+    return totalPrice
 }

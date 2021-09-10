@@ -42,7 +42,32 @@
   }
 }
 .totalPrice {
+  display: block;
   padding: 15px 0;
   text-transform: uppercase;
   text-align: right;
+  font-size: 1.6rem;
+}
+.payButton {
+  display: block;
+  cursor: pointer;
+  margin: 1rem auto 0;
+  border: 2px solid #222;
+  background: #222;
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  width: 180px;
+  text-align: center;
+  line-height: 2.2rem;
+  &:hover {
+    background: none;
+    color: #222;
+  }
+}
+.empty {
+  display: block;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.4rem;
 }

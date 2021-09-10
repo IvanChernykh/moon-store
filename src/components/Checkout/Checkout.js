@@ -15,8 +15,12 @@ function Checkout({ checkout, removeItem, addItem, decreaseQuantity }) {
                 <span>Price</span>
                 <span>Remove</span>
             </div>
-            {Items.length ? <div className={cls.items}> {Items}</div> : null}
-            <h2 className={cls.totalPrice}>Total:</h2>
+            {Items.length ? <div className={cls.items}> {Items}</div> : <span className={cls.empty}>The cart is empty</span>}
+            <span className={cls.totalPrice}>Total: ${checkout.totalPrice}</span>
+            <div>
+                {!!Items.length && <button className={cls.payButton}>Pay now</button>}
+
+            </div>
         </div>
     )
 }

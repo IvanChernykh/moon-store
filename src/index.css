@@ -13,6 +13,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-y: scroll;
 }
+button {
+  transition: 0.2s;
+}
 body::-webkit-scrollbar {
   width: 1em;
 }
