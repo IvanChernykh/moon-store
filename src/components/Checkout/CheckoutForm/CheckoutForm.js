@@ -1,63 +1,36 @@
 import { useForm } from 'react-hook-form'
+import { validation } from '../../../utils/formValidation';
 import FormErrorMessage from '../../common/FormErrorMessage/FormErrorMessage';
 import cls from './CheckoutForm.module.scss'
 
 function CheckoutForm({ price }) {
-    const { register, handleSubmit, formState: { errors } } = useForm({ mode: 'onBlur', criteriaMode: 'all' })
+    const { register, handleSubmit, formState: { errors } } = useForm({ mode: 'onChange', criteriaMode: 'all' })
     function submitHandler(data) {
         console.log(data);
-    }
-    const validation = {
-        email: {
-            required: 'Required Field',
-        },
-        name: {
-            required: 'Required Field',
-        },
-        city: {
-            required: 'Required Field',
-        },
-        adress: {
-            required: 'Required Field',
-        },
-        cardNumber: {
-            required: 'Required Field',
-            maxLength: 16,
-            minLength: 16,
-            validate: value => value.length === 16
-        },
-        expiration: {
-            required: 'Required Field',
-        },
-        cvc: {
-            required: 'Required Field',
-            maxLength: 3,
-            minLength: 3,
-        }
     }
     return (
         <div>
             <h1 className={cls.title}>Shipping and payment details</h1>
             <form className={cls.form} onSubmit={handleSubmit(submitHandler)}>
                 <div className={cls.email}>
-                    <input {...register('Email', validation.email)} type='email' placeholder='Email' />
+                    <input {...register('Email', { ...validation.email, ...validation.common })} type='email' placeholder='Email' />
                     <FormErrorMessage errors={errors} name='Email' />
                 </div>
                 <div>
-                    <input {...register('Name', validation.name)} type='text' placeholder='Name' />
+                    <input {...register('Name', { ...validation.name, ...validation.common })} type='text' placeholder='Name' />
                     <FormErrorMessage errors={errors} name='Name' />
                 </div>
                 <div>
-                    <input {...register('City', validation.city)} type='text' placeholder='City' />
+                    <input {...register('City', { ...validation.city, ...validation.common })} type='text' placeholder='City' />
                     <FormErrorMessage errors={errors} name='City' />
                 </div>
                 <div>
-                    <input {...register('Adress', validation.adress)} type='text' placeholder='Adress' />
+                    <input {...register('Adress', { ...validation.adress, ...validation.common })} type='text' placeholder='Adress' />
                     <FormErrorMessage errors={errors} name='Adress' />
                 </div>
                 <div className={cls.paymentInfo}>
                     <div className={cls.cardNumber}>
-                        <input {...register('Card_CardNumber', validation.cardNumber)} maxLength='16' type='tel' placeholder='Card Number' />
+                        <input {...register('Card_CardNumber', { ...validation.cardNumber, ...validation.onlyNumbers })} maxLength='16' type='tel' placeholder='Card Number' />
                         <FormErrorMessage errors={errors} name='Card_CardNumber' />
                     </div>
                     <div className={cls.expiration}>
@@ -65,7 +38,7 @@ function CheckoutForm({ price }) {
                         <FormErrorMessage errors={errors} name='Card_Expiration' />
                     </div>
                     <div>
-                        <input {...register('Card_CVC', validation.cvc)} className={cls.cvc} type='tel' placeholder='CVC' maxLength='3' />
+                        <input {...register('Card_CVC', { ...validation.cvc, ...validation.onlyNumbers })} className={cls.cvc} type='tel' placeholder='CVC' maxLength='3' />
                         <FormErrorMessage errors={errors} name='Card_CVC' />
                     </div>
                 </div>
