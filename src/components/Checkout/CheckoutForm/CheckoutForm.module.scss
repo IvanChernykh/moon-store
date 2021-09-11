@@ -19,17 +19,20 @@
     outline: none;
     font-size: 1rem;
     padding: 0.7rem;
-    margin-bottom: 1.8rem;
+    margin-bottom: 2rem;
     &:focus {
       border-color: #00aaff;
       box-shadow: 0 0 3px #6dadf5;
     }
   }
 }
-.paymentInfo {
+.paymentInfo,
+.bottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.8rem;
+}
+.paymentInfo {
   margin-bottom: 1.7rem;
   .cardNumber {
     grid-column: 1/3;
@@ -42,26 +45,26 @@
     display: flex;
   }
 }
+
 .bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   span {
     font-size: 1.5rem;
+    align-self: center;
+    text-align: right;
   }
   button {
-    width: 50%;
-    max-width: 150px;
+    width: 100%;
     font-size: 1rem;
     padding: 0.7rem;
-    border: 1px solid #999;
+    border: 2px solid #222;
     border-radius: 4px;
-    background: none;
+    background: #222;
     cursor: pointer;
+    color: #fff;
     &:hover {
-      background: #222;
+      background: none;
       border-color: #222;
-      color: #fff;
+      color: #222;
     }
   }
 }

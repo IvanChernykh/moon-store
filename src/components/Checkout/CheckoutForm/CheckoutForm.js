@@ -17,15 +17,15 @@ function CheckoutForm({ price }) {
                     <FormErrorMessage errors={errors} name='Email' />
                 </div>
                 <div>
-                    <input {...register('Name', { ...validation.name, ...validation.common })} type='text' placeholder='Name' />
+                    <input {...register('Name', { ...validation.common })} type='text' placeholder='Name' />
                     <FormErrorMessage errors={errors} name='Name' />
                 </div>
                 <div>
-                    <input {...register('City', { ...validation.city, ...validation.common })} type='text' placeholder='City' />
+                    <input {...register('City', { ...validation.common })} type='text' placeholder='City' />
                     <FormErrorMessage errors={errors} name='City' />
                 </div>
                 <div>
-                    <input {...register('Adress', { ...validation.adress, ...validation.common })} type='text' placeholder='Adress' />
+                    <input {...register('Adress', { ...validation.common })} type='text' placeholder='Adress' />
                     <FormErrorMessage errors={errors} name='Adress' />
                 </div>
                 <div className={cls.paymentInfo}>
@@ -34,7 +34,7 @@ function CheckoutForm({ price }) {
                         <FormErrorMessage errors={errors} name='Card_CardNumber' />
                     </div>
                     <div className={cls.expiration}>
-                        <input  {...register('Card_Expiration', validation.expiration)} maxLength='4' type='tel' placeholder='MM/YY' />
+                        <input  {...register('Card_Expiration', validation.expiration)} maxLength='5' type='tel' placeholder='MM/YY' />
                         <FormErrorMessage errors={errors} name='Card_Expiration' />
                     </div>
                     <div>
