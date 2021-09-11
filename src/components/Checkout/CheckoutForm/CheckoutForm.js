@@ -9,7 +9,6 @@ function CheckoutForm({ price }) {
     const validation = {
         cardNumber: {
             required: true,
-            minLength: 16,
             maxLength: 16,
         },
         expiration: {
@@ -28,12 +27,12 @@ function CheckoutForm({ price }) {
                 <input {...register('Name')} type='text' placeholder='Name' />
                 <input {...register('City')} type='text' placeholder='City' />
                 <input {...register('Adress')} type='text' placeholder='Adress' />
+                {/* <div className={cls.paymentInfo}>
+                </div> */}
                 <div className={cls.paymentInfo}>
-                </div>
-                <div className={cls.paymentInfo}>
-                    <input {...register('Card_CardNumber', validation.cardNumber)} maxLength='16' className={cls.cardNumber} type='tel' placeholder='Card Number' />
-                    <input {...register('Card_Expiration', validation.expiration)} className={cls.expiration} type='tel' placeholder='MM/YY' />
-                    <input {...register('Card_CVC', validation.cvc)} maxLength='3' className={cls.cvc} type='tel' placeholder='CVC' />
+                    <input {...register('Card_CardNumber', validation.cardNumber)} maxLength='19' className={cls.cardNumber} type='tel' placeholder='Card Number' />
+                    <input  {...register('Card_ExpirationMonth', validation.expiration)} maxLength='4' type='tel' placeholder='MM/YY' className={cls.expiration} />
+                    <input {...register('Card_CVC', validation.cvc)} className={cls.cvc} type='tel' placeholder='CVC' maxLength='3' />
                 </div>
                 <div className={cls.bottom}>
                     <span>Your total: ${price}</span>
