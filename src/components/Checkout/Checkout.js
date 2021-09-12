@@ -12,7 +12,7 @@ function Checkout({ items, totalPrice, removeItem, addItem, decreaseQuantity }) 
     const [formIsOpen, setFormIsOpen] = useState(false)
     return (
         <div className={cls.container}>
-            {formIsOpen ? <CheckoutForm price={totalPrice} />
+            {formIsOpen ? <CheckoutForm price={totalPrice} setFormIsOpen={setFormIsOpen} formIsOpen={formIsOpen} />
                 : (<div>
                     <div className={cls.top}>
                         <span>Product</span>

@@ -29,7 +29,7 @@ export const validation = {
         required: 'Required Field',
         pattern: {
             value: /\d\d\/\d\d/g,
-            message: 'Please enter only numbers in MM/YY format'
+            message: 'Please enter numbers in MM/YY format'
         }
     },
     cvc: {

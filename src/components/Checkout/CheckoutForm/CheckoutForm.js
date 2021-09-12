@@ -3,9 +3,11 @@ import { validation } from '../../../utils/formValidation';
 import FormErrorMessage from '../../common/FormErrorMessage/FormErrorMessage';
 import cls from './CheckoutForm.module.scss'
 
-function CheckoutForm({ price }) {
+function CheckoutForm({ price, formIsOpen, setFormIsOpen }) {
     const { register, handleSubmit, formState: { errors } } = useForm({ mode: 'onChange', criteriaMode: 'all' })
     function submitHandler(data) {
+        setFormIsOpen(!formIsOpen)
+        alert('Payment Successfull')
         console.log(data);
     }
     return (
