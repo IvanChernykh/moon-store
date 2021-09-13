@@ -44,20 +44,12 @@ function checkoutReducer(state = initialState, action) {
                 totalPrice: calculateTotalPrice(decreasedItems)
             }
         default:
-            return { ...state }
+            return state
     }
 }
 export default checkoutReducer
 
-export const toggleCart = () => {
-    return { type: TOGGLE_CART }
-}
-export const addItem = item => {
-    return { type: ADD_ITEM, item }
-}
-export const removeItem = item => {
-    return { type: REMOVE_ITEM, item }
-}
-export const decreaseQuantity = item => {
-    return { type: DECREASE_QUANTITY, item }
-}
+export const toggleCart = () => ({ type: TOGGLE_CART })
+export const addItem = item => ({ type: ADD_ITEM, item })
+export const removeItem = item => ({ type: REMOVE_ITEM, item })
+export const decreaseQuantity = item => ({ type: DECREASE_QUANTITY, item })

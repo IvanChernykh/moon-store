@@ -7,7 +7,7 @@ function CheckoutForm({ price, formIsOpen, setFormIsOpen }) {
     const { register, handleSubmit, formState: { errors } } = useForm({ mode: 'onChange', criteriaMode: 'all' })
     function submitHandler(data) {
         setFormIsOpen(!formIsOpen)
-        alert('Payment Successfull')
+        alert('Successfull')
         console.log(data);
     }
     return (
