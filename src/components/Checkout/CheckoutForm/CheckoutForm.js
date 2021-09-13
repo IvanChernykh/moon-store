@@ -13,6 +13,7 @@ function CheckoutForm({ price, formIsOpen, setFormIsOpen }) {
     return (
         <div>
             <h1 className={cls.title}>Shipping and payment details</h1>
+            <span className={cls.total}>Your total: ${price}</span>
             <form className={cls.form} onSubmit={handleSubmit(submitHandler)}>
                 <div className={cls.email}>
                     <input {...register('Email', { ...validation.email, ...validation.common })} type='email' placeholder='Email' />
@@ -45,9 +46,10 @@ function CheckoutForm({ price, formIsOpen, setFormIsOpen }) {
                     </div>
                 </div>
                 <div className={cls.bottom}>
-                    <span>Your total: ${price}</span>
+                    <button className={cls.back} onClick={() => setFormIsOpen(false)} type='button'>Back</button>
                     <button type='submit'>Submit</button>
                 </div>
+
             </form>
         </div>
     )

@@ -1,8 +1,14 @@
 .title {
   text-align: center;
 }
+.total {
+  font-size: 1.5rem;
+  text-align: center;
+  display: block;
+  margin: 1rem 0 2rem;
+}
 .form {
-  margin: 2rem auto 0;
+  margin: 0 auto;
   width: 100%;
   max-width: 540px;
   @media (max-width: 576px) {
@@ -47,16 +53,11 @@
 }
 
 .bottom {
-  span {
-    font-size: 1.5rem;
-    align-self: center;
-    text-align: right;
-  }
   button {
     width: 100%;
     font-size: 1rem;
     padding: 0.7rem;
-    border: 2px solid #222;
+    border: 1px solid #222;
     border-radius: 4px;
     background: #222;
     cursor: pointer;
@@ -66,5 +67,9 @@
       border-color: #222;
       color: #222;
     }
+  }
+  .back:hover {
+    background: #ebebeb;
+    border-color: #999;
   }
 }

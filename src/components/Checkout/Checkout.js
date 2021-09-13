@@ -25,6 +25,7 @@ function Checkout({ items, totalPrice, removeItem, addItem, decreaseQuantity }) 
                     <div>
                         {!!Items.length && <button onClick={() => setFormIsOpen(!formIsOpen)} className={cls.payButton}>Pay now</button>}
                     </div>
+
                 </div>)}
         </div>
     )
