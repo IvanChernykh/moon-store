@@ -16,7 +16,7 @@ function Header({ toggleCart, checkout }) {
             </div>
             <div className={cls.menu}>
                 <NavLink to='/shop' className={cls.link} activeClassName={`${cls.link} ${cls.active}`}>Shop</NavLink>
-                <NavLink to='/contact' className={cls.link} activeClassName={`${cls.link} ${cls.active}`}>Contact</NavLink>
+                {/* <NavLink to='/contact' className={cls.link} activeClassName={`${cls.link} ${cls.active}`}>Contact</NavLink> */}
 
                 <button onClick={() => toggleCart()} className={cls.checkout}>
                     <span className={cls.items}>{checkout.totalItems}</span>
