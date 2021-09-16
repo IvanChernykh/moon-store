@@ -14,3 +14,8 @@ There is also a payment form with a simple validation implemented, but in fact i
 - React Router Dom
 - React Hook Form
 - CSS module stylesheet
+
+## Deployment
+
+The project is deployed on:
+https://moon-store-f3ac7.web.app/
