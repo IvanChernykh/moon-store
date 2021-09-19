@@ -9,13 +9,17 @@ There is also a payment form with a simple validation implemented, but in fact i
 
 ## Technologies
 
-- React
-- Redux
-- Redux Persist
-- React-Redux
-- React Router Dom
-- React Hook Form
-- CSS module stylesheet
+-   React
+-   Redux
+-   Redux Persist
+-   React-Redux
+-   React Router Dom
+-   React Hook Form
+-   CSS module stylesheet
+
+## Development
+
+The login functionality is currently under developing
 
 ## Deployment
 

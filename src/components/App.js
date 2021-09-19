@@ -6,6 +6,7 @@ import RouteHoc from "./common/RouteHoc/RouteHoc";
 import Header from "./Header/Header";
 import HomePage from "./HomePage/HomePage";
 import ShopPage from "./ShopPage/ShopPage";
+import SignInPage from "./SignInPage/SignInPage";
 
 function App(props) {
   const Categories = Object.entries(props.shop).map(el => {
@@ -26,6 +27,9 @@ function App(props) {
       </Route>
       <Route exact path='/checkout'>
         <Checkout />
+      </Route>
+      <Route exact path='/signin'>
+        <SignInPage />
       </Route>
       {Categories}
     </div>

@@ -12,7 +12,7 @@ function Checkout({ items, totalPrice, removeItem, addItem, decreaseQuantity }) 
     const [formIsOpen, setFormIsOpen] = useState(false)
     return (
         <div className={cls.container}>
-            {formIsOpen ? <CheckoutForm price={totalPrice} setFormIsOpen={setFormIsOpen} formIsOpen={formIsOpen} />
+            {formIsOpen ? <CheckoutForm price={totalPrice} setFormIsOpen={setFormIsOpen} />
                 : (<div>
                     <div className={cls.top}>
                         <span>Product</span>
@@ -23,7 +23,7 @@ function Checkout({ items, totalPrice, removeItem, addItem, decreaseQuantity }) 
                     {Items.length ? <div className={cls.items}> {Items}</div> : <span className={cls.empty}>The cart is empty</span>}
                     <span className={cls.totalPrice}>Total: ${totalPrice}</span>
                     <div>
-                        {!!Items.length && <button onClick={() => setFormIsOpen(!formIsOpen)} className={cls.payButton}>Pay now</button>}
+                        {!!Items.length && <button onClick={() => setFormIsOpen(true)} className={cls.payButton}>Pay now</button>}
                     </div>
 
                 </div>)}

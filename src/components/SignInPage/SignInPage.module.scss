@@ -1,0 +1,16 @@
+.container {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    & > div {
+        margin: 0 2.5rem;
+        width: 100%;
+        max-width: 560px;
+    }
+    @media (max-width: 576px) {
+        flex-direction: column;
+        & > div {
+            margin: 0 auto 2rem;
+        }
+    }
+}
