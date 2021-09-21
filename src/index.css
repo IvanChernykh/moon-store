@@ -1,44 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Varta:wght@400;700&display=swap");
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 body {
-  margin: 0;
-  font-family: "Varta", "Helvetica Neue", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-y: scroll;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-y: scroll;
+}
+body,
+button {
+    font-family: "Varta", "Helvetica Neue", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", sans-serif;
 }
 button,
 input {
-  transition: 0.2s;
+    transition: 0.2s;
 }
 body::-webkit-scrollbar {
-  width: 1em;
+    width: 1em;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: #cbcbcb;
+    background-color: #cbcbcb;
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 .app {
-  max-width: 1600px;
-  padding: 15px;
-  width: 100%;
-  margin: 0 auto;
+    max-width: 1600px;
+    padding: 15px;
+    width: 100%;
+    margin: 0 auto;
 }
 @media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
+    html {
+        font-size: 14px;
+    }
 }
 @media (max-width: 576px) {
-  html {
-    font-size: 12px;
-  }
+    html {
+        font-size: 12px;
+    }
 }

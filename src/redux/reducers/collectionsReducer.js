@@ -33,11 +33,9 @@ const initialState = {
     ]
 }
 
-function collectionsReducer(state = initialState, action) {
+export default function collectionsReducer(state = initialState, action) {
     switch (action.type) {
         default:
             return state
     }
 }
-
-export default collectionsReducer

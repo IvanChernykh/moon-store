@@ -13,7 +13,7 @@ const initialState = {
 
 }
 
-function checkoutReducer(state = initialState, action) {
+export default function checkoutReducer(state = initialState, action) {
     switch (action.type) {
         case TOGGLE_CART:
             return { ...state, showCart: !state.showCart }
@@ -47,7 +47,6 @@ function checkoutReducer(state = initialState, action) {
             return state
     }
 }
-export default checkoutReducer
 
 export const toggleCart = () => ({ type: TOGGLE_CART })
 export const addItem = item => ({ type: ADD_ITEM, item })

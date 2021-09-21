@@ -5,8 +5,9 @@ import { ReactComponent as CheckoutIcon } from '../../assets/images/bag-icon.svg
 import Cart from './Cart/Cart'
 import { connect } from 'react-redux'
 import { toggleCart } from '../../redux/reducers/checkoutReducer'
+import { signOut } from '../../redux/reducers/authReducer'
 
-function Header({ toggleCart, checkout }) {
+function Header({ toggleCart, checkout, auth, signOut }) {
     return (
         <header className={cls.container}>
             <div>
@@ -16,7 +17,8 @@ function Header({ toggleCart, checkout }) {
             </div>
             <div className={cls.menu}>
                 <NavLink to='/shop' className={cls.link} activeClassName={`${cls.link} ${cls.active}`}>Shop</NavLink>
-                <NavLink to='/signin' className={cls.link} activeClassName={`${cls.link} ${cls.active}`}>Sign In</NavLink>
+                {auth.isAuth ? <button className={`${cls.link} ${cls.btn}`} type='button' onClick={() => signOut()}>Sign Out</button>
+                    : <NavLink to='/signin' className={cls.link} activeClassName={`${cls.link} ${cls.active}`}> Sign In</NavLink>}
                 <button onClick={() => toggleCart()} className={cls.checkout}>
                     <span className={cls.items}>{checkout.totalItems}</span>
                     <CheckoutIcon className={cls.icon} />
@@ -27,6 +29,7 @@ function Header({ toggleCart, checkout }) {
     )
 }
 const mapStateToProps = state => {
-    return { checkout: state.checkout }
+    return { checkout: state.checkout, auth: state.auth }
 }
-export default connect(mapStateToProps, { toggleCart })(Header)
+
+export default connect(mapStateToProps, { toggleCart, signOut })(Header)

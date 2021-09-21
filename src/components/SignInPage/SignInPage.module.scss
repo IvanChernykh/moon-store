@@ -1,16 +1,22 @@
 .container {
-    margin: 2rem auto;
+    margin: 2rem auto 0;
     display: flex;
     justify-content: center;
     & > div {
-        margin: 0 2.5rem;
+        margin: 0 3rem;
         width: 100%;
-        max-width: 560px;
+        max-width: 460px;
     }
-    @media (max-width: 576px) {
+    @media (max-width: 660px) {
         flex-direction: column;
         & > div {
-            margin: 0 auto 2rem;
+            margin: 0 auto 3rem;
         }
+    }
+}
+.form {
+    margin-top: 2rem;
+    div {
+        position: relative;
     }
 }

@@ -18,6 +18,17 @@ export const validation = {
             message: 'Incorrect email adress'
         }
     },
+    password: {
+        required: 'Required Field',
+        minLength: {
+            value: 6,
+            message: 'Min length is 6 symbols'
+        },
+        maxLength: {
+            value: 20,
+            message: 'Max length is 20 symbols'
+        }
+    },
     cardNumber: {
         required: 'Required Field',
         maxLength: {

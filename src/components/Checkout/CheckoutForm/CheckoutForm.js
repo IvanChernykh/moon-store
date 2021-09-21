@@ -17,7 +17,7 @@ function CheckoutForm({ price, setFormIsOpen }) {
             <h1 className={cls.title}>Shipping and payment details</h1>
             <span className={cls.total}>Your total: ${price}</span>
             <form className={cls.form} onSubmit={handleSubmit(submitHandler)}>
-                <div className={cls.email}>
+                <div>
                     <FormInput props={{ ...register('Email', { ...validation.email, ...validation.common }) }} type='email' placeholder='Email' />
                     <FormErrorMessage errors={errors} name='Email' />
                 </div>
