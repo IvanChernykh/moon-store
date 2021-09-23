@@ -1,7 +1,6 @@
 import { api } from "../../firebase/firebase"
 
-const SIGN_UP = 'SIGN_UP'
-const SIGN_IN = 'SIGN_IN'
+const LOG_IN = 'LOG_IN'
 const SIGN_OUT = 'SIGN_OUT'
 
 const initialState = {
@@ -10,30 +9,31 @@ const initialState = {
 
 export default function authReducer(state = initialState, action) {
     switch (action.type) {
-        case SIGN_UP:
-            return { ...state, isAuth: true }
-        case SIGN_IN:
+        case LOG_IN:
             return { ...state, isAuth: true }
         case SIGN_OUT:
-            return { ...state, isAuth: false }
+            return { ...state, isAuth: false, displayName: null }
         default:
             return state
     }
 }
-export const signUpActionCreator = (data) => ({ type: SIGN_UP, data })
-export const signInActionCreator = (data) => ({ type: SIGN_IN, data })
-export const signOutActionCreator = () => ({ type: SIGN_OUT })
+const LogInActionCreator = data => ({ type: LOG_IN, data })
+const signOutActionCreator = () => ({ type: SIGN_OUT })
 
-
-export const signUp = data => dispatch => {
+export const signUp = data => async dispatch => {
     api.signUp(data)
-    dispatch(signUpActionCreator(data))
+    dispatch(LogInActionCreator(data))
 }
-export const signIn = data => dispatch => {
-    api.signIn(data)
-    dispatch(signInActionCreator(data))
+export const signIn = (data, history) => async dispatch => {
+    const res = await api.signIn(data)
+    if (res) {
+        dispatch(LogInActionCreator(data))
+        history.push('/')
+    } else {
+        alert('Incorrect email or password')
+    }
 }
-export const signOut = () => dispatch => {
+export const signOut = () => async dispatch => {
     api.signOut()
     dispatch(signOutActionCreator())
 }

@@ -8,11 +8,11 @@ import FormInput from '../../common/FormInput/FormInput'
 import FormHeader from '../FormHeader/FormHeader'
 import cls from '../SignInPage.module.scss'
 
-function SignUpForm({ signUp }) {
+function SignUpForm({ signUp, history }) {
     const { register, watch, handleSubmit, formState: { errors } } = useForm({ mode: 'onChange', criteriaMode: 'all' })
-
     function submitHandler(data) {
         signUp(data)
+        history.push('/')
     }
     return (
         <div>

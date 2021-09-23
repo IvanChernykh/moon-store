@@ -16,9 +16,10 @@ function Header({ toggleCart, checkout, auth, signOut }) {
                 </Link>
             </div>
             <div className={cls.menu}>
-                <NavLink to='/shop' className={cls.link} activeClassName={`${cls.link} ${cls.active}`}>Shop</NavLink>
-                {auth.isAuth ? <button className={`${cls.link} ${cls.btn}`} type='button' onClick={() => signOut()}>Sign Out</button>
+                {auth.isAuth
+                    ? <button className={`${cls.link} ${cls.btn}`} type='button' onClick={() => signOut()}>Sign Out</button>
                     : <NavLink to='/signin' className={cls.link} activeClassName={`${cls.link} ${cls.active}`}> Sign In</NavLink>}
+                <NavLink to='/shop' className={cls.link} activeClassName={`${cls.link} ${cls.active}`}>Shop</NavLink>
                 <button onClick={() => toggleCart()} className={cls.checkout}>
                     <span className={cls.items}>{checkout.totalItems}</span>
                     <CheckoutIcon className={cls.icon} />

@@ -7,48 +7,26 @@ const firebaseConfig = {
     projectId: "moon-store-f3ac7",
     storageBucket: "moon-store-f3ac7.appspot.com",
     messagingSenderId: "892334090398",
-    appId: "1:892334090398:web:b2f239650c3955a757338f"
+    appId: "1:892334090398:web:b2f239650c3955a757338f",
 };
 initializeApp(firebaseConfig);
+const auth = getAuth()
 
 export const api = {
     signUp(data) {
-        const auth = getAuth();
-        createUserWithEmailAndPassword(auth, data.Email, data.Password)
-            .then(userCredential => {
-                console.log('userCredential ', userCredential)
+        createUserWithEmailAndPassword(auth, data.Email, data.Password).then(() => {
+            updateProfile(auth.currentUser, {
+                displayName: data.Name
             })
-            .then(() => {
-                updateProfile(auth.currentUser, {
-                    displayName: data.Name
-                })
-            })
-            .catch((err) => {
-                alert(err)
-                console.log('error create ', err)
-            })
+        }).catch((err) => alert(err))
     },
-    signIn(data) {
-        const auth = getAuth()
-        signInWithEmailAndPassword(auth, data.Email, data.Password)
-            .then((userCredential) => {
-                // Signed in 
-                // const user = userCredential.user;
-                // ...
-            })
+    async signIn(data) {
+        return await signInWithEmailAndPassword(auth, data.Email, data.Password).then((res) => res)
             .catch((err) => {
                 console.log(err)
-            });
+            })
     },
     signOut() {
-        const auth = getAuth()
-        signOut(auth).catch((err) => {
-            console.log(err)
-        });
-    },
-    getUser() {
-        const user = getAuth().currentUser
-        if (user !== null) return user.providerData[0]
+        signOut(auth).catch((err) => console.log(err))
     }
 }
-window.api = api
