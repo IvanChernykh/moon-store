@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app"
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth"
 const firebaseConfig = {
-    apiKey: "AIzaSyCkfOidq80Oe3kPAKQhv7N5SjDn50FyIDY",
+    apiKey: "",
     authDomain: "moon-store-f3ac7.firebaseapp.com",
     databaseURL: "https://moon-store-f3ac7-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "moon-store-f3ac7",
